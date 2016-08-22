@@ -13,7 +13,7 @@ BLOCK_LEN = 50
 
 # ----- SYNTH PARAMETERS -----
 FS = 20000
-N_OP = 6
+N_OP = 2
 N_GEN = 1
 
 # ----- BUFFER PARAMETERS -----

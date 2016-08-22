@@ -8,13 +8,7 @@
           modulation, or FM synthesis), check out fm_resources at the bottom of 
           this doc string. For more information about granular synthesis, check
           out grain_resources at the bottom of this doc string.
-
-@instructions: To start pm_synth, simply run this main.py folder. In a python
-               terminal, you can type "run main.py", or in a Linux terminal
-               you can type "python main.py".
 @requirements: PyQt5, sounddevice, numpy
-@contact: Daniel Guest at drg130130@utdallas.edu
-
 @fm_resouces: Chowning's original paper on FM synthesis -- https://goo.gl/G7pEQl
 @grain_resources: Microsound, by Curtis Roads -- https://goo.gl/A3IKV3
 """

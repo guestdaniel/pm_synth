@@ -5,14 +5,6 @@
 @date: 08/15/2016
 @author: Daniel Guest
 @purpose: Phase modulation synthesizer ala Yamaha DX7. 
-
-@note: Python is not really designed for real-time audio processing, and as
-    such even something as modest as this synthesizer can tax it to the point
-    of audio glitches/errors. If you are getting glitches/errors, try
-    going into pm_synth_defaults and substantially lowering the max number of
-    grains. Or, try lowering the number of generators to zero, and choosing
-    an algorithm that doesn't have any generators (like a1_2op). 
-    
 """
 import numpy as np
 import math
@@ -91,7 +83,7 @@ class Phase_Mod_Synth(Synthesizer):
         self.output_module = Output(self)
         
         # Choose algorithm
-        self.algorithm = a2_6op_1gen(self.ops, self.gens, self.output_module)
+        self.algorithm = a1_2op_1gen(self.ops, self.gens, self.output_module)
         self.algorithm.implement()
 
     def synthesize(self):
