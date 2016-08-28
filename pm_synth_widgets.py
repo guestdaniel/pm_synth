@@ -57,7 +57,18 @@ class CenterWidget(QWidget):
 
                 
 class OperatorGroup(QWidget):
+    """
+    Collection of control interfaces for operators.
     
+    Contains a a frequency slider, an amp slider, and an integral checkbox. The
+    frequency slider controls the frequency of the operator this Group is
+    connected to, the amp slider controls the amplitude of the operator this
+    Group is connected to, and the integral checkbox switches both the 
+    frequency slider and operator to and from integral frequency mode.
+    
+    Note that these connections only apply once this group has been passed to
+    an appropriate Controller object.
+    """
     def __init__(self, parent=None):
         super(QWidget, self).__init__(parent)
         
@@ -79,7 +90,16 @@ class OperatorGroup(QWidget):
         
         
 class GeneratorGroup(QWidget):
+    """
+    Collection of control interfaces for generators.
     
+    Contains sliders which control the lag, period, and duration parameters of
+    the generator this Group is connected to, as well as each parameter's 
+    respective jitter.
+    
+    Note that these connections only apply once this group has been passed to
+    an appropriate Controller object.
+    """
     def __init__(self, parent=None):
         super(QWidget, self).__init__(parent)
         
@@ -138,7 +158,12 @@ class GeneratorGroup(QWidget):
         box.addWidget(self.durJitterSlider)        
         
 class FreqKnob(QDial):
+    """
+    Custom child class of QDial.
     
+    FreqKnob is a custom implementation of QDial. If set to integral frequency,
+    ranges from 0 to 4. If not, ranges from 0 to 127 (MIDI spec). 
+    """
     def __init__(self, minimum=0, maximum=127, value=68):
         QDial.__init__(self, minimum=minimum, maximum=maximum, value=value)
         self.set_integral_freq(boolean=True)

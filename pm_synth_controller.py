@@ -26,7 +26,18 @@ class Controller(object):
         
         
 class Operator_Controller(Controller):
+    """
+    Operator Controller class.
     
+    Arguments:
+        operator (Operator object) -- the Operator object this Controller 
+            connects to.
+    
+    An Operator_Controller is passed an Operator at initialization, and then
+    an OperatorGroup later on using the bind_interface() method. When this
+    method is called, all sliders/buttons in the OperatorGroup are connected to
+    the proper parameters in the Operator.
+    """
     def __init__(self, operator):
         Controller.__init__(self)
         self.op = operator
@@ -70,7 +81,18 @@ class Operator_Controller(Controller):
         
         
 class Generator_Controller(Controller):
+    """
+    Generator Controller class.
     
+    Arguments:
+        Generator (Generator object) -- the Generator object this Controller 
+            connects to.
+    
+    An Generator_Controller is passed an Generator at initialization, and then
+    an GeneratorGroup later on using the bind_interface() method. When this
+    method is called, all sliders/buttons in the GeneratorGroup are connected to
+    the proper parameters in the Generator.
+    """    
     def __init__(self, generator):
         Controller.__init__(self)
         self.gen = generator
@@ -126,7 +148,18 @@ class Generator_Controller(Controller):
             
         
 class Synth_Controller(Controller):
+    """
+    Synthesizer Controller class.
     
+    Arguments:
+        Synthesizer (Synthesizer object) -- the Synthesizer object this Controller 
+            connects to.
+    
+    An Synthesizer_Controller is passed an Synthesizer at initialization, and then
+    an SynthesizerGroup later on using the bind_interface() method. When this
+    method is called, all sliders/buttons in the SynthesizerGroup are connected to
+    the proper parameters in the Synthesizer.
+    """        
     def __init__(self, synth):
         Controller.__init__(self)
         self.synth = synth
